@@ -6,11 +6,11 @@
    ============================================================ */
 	const STORAGE_KEY = "framerSoloLevelingTracker_v1";
 
-	const QUEST_DEFS = [
+	const FALLBACK_QUEST_DEFS = [
 		{
-			id: "learn",
+			id: "fallback_quest_1",
 			label: "Learn Something New",
-			desc: "Study a tutorial, article or course",
+			desc: "Study a tutorial, article, or course",
 			xp: 10,
 			gold: 5,
 			gems: 0,
@@ -18,7 +18,7 @@
 			icon: "fa-book-open",
 		},
 		{
-			id: "build",
+			id: "fallback_quest_2",
 			label: "Build for 60+ Minutes",
 			desc: "Deep work inside the Framer canvas",
 			xp: 40,
@@ -28,7 +28,7 @@
 			icon: "fa-hammer",
 		},
 		{
-			id: "post",
+			id: "fallback_quest_3",
 			label: "Post on Social Media",
 			desc: "Ship content to the outside world",
 			xp: 15,
@@ -38,7 +38,7 @@
 			icon: "fa-share-nodes",
 		},
 		{
-			id: "study",
+			id: "fallback_quest_4",
 			label: "Study Another Creator",
 			desc: "Break down someone else's craft",
 			xp: 10,
@@ -47,17 +47,9 @@
 			energy: 5,
 			icon: "fa-magnifying-glass",
 		},
-		{
-			id: "notes",
-			label: "Update Tracker / Notes",
-			desc: "Log today's progress and reflect",
-			xp: 5,
-			gold: 2,
-			gems: 0,
-			energy: 5,
-			icon: "fa-pen",
-		},
 	];
+	const PROGRAM_DAYS_TOTAL = 60;
+	const QUESTS_PER_DAY = 4;
 	const WEEKLY_QUEST = { xp: 25, gold: 10, energy: 10 };
 	const PERFECT_DAY_BONUS = { gold: 50, gems: 5 };
 
@@ -205,6 +197,8 @@
    STATE
    ============================================================ */
 	let state = null;
+	let questProgram = [];
+	let questDefsForToday = FALLBACK_QUEST_DEFS.slice(0, QUESTS_PER_DAY);
 
 	function pad2(n) {
 		return String(n).padStart(2, "0");
@@ -213,11 +207,7 @@
 	function todayStr(d) {
 		d = d || new Date();
 		return (
-			d.getFullYear() +
-			"-" +
-			pad2(d.getMonth() + 1) +
-			"-" +
-			pad2(d.getDate())
+			d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate())
 		);
 	}
 
@@ -243,6 +233,63 @@
 			.replace(/>/g, "&gt;")
 			.replace(/"/g, "&quot;")
 			.replace(/'/g, "&#39;");
+	}
+
+	function normalizeQuestDef(raw, fallbackId) {
+		return {
+			id: String(raw && raw.id ? raw.id : fallbackId),
+			label: String(raw && raw.label ? raw.label : "Untitled Quest"),
+			desc: String(raw && raw.desc ? raw.desc : ""),
+			xp: Math.max(0, parseInt(raw && raw.xp, 10) || 0),
+			gold: Math.max(0, parseInt(raw && raw.gold, 10) || 0),
+			gems: Math.max(0, parseInt(raw && raw.gems, 10) || 0),
+			energy: Math.max(0, parseInt(raw && raw.energy, 10) || 0),
+			icon:
+				typeof raw === "object" && raw && raw.icon
+					? String(raw.icon)
+					: "fa-list-check",
+		};
+	}
+
+	function getTotalProgramDays() {
+		return questProgram.length || PROGRAM_DAYS_TOTAL;
+	}
+
+	function getQuestDefsForDay(programDay) {
+		const dayIndex = clamp(
+			programDay - 1,
+			0,
+			Math.max(0, questProgram.length - 1),
+		);
+		const dayData = questProgram[dayIndex];
+		if (!dayData || !Array.isArray(dayData.quests)) {
+			return FALLBACK_QUEST_DEFS.slice(0, QUESTS_PER_DAY);
+		}
+		return dayData.quests.slice(0, QUESTS_PER_DAY);
+	}
+
+	function buildQuestStateForDefs(defs, existing) {
+		const next = {};
+		defs.forEach((def) => {
+			next[def.id] = !!(existing && existing[def.id]);
+		});
+		return next;
+	}
+
+	function syncQuestDefsForToday() {
+		if (
+			typeof state.today.programDay !== "number" ||
+			!isFinite(state.today.programDay)
+		) {
+			state.today.programDay = (state.logs ? state.logs.length : 0) + 1;
+		}
+		const day = clamp(state.today.programDay || 1, 1, getTotalProgramDays());
+		state.today.programDay = day;
+		questDefsForToday = getQuestDefsForDay(day);
+		state.today.quests = buildQuestStateForDefs(
+			questDefsForToday,
+			state.today.quests,
+		);
 	}
 
 	function defaultState() {
@@ -274,13 +321,8 @@
 			},
 			today: {
 				date: todayStr(now),
-				quests: {
-					learn: false,
-					build: false,
-					post: false,
-					study: false,
-					notes: false,
-				},
+				programDay: 1,
+				quests: buildQuestStateForDefs(getQuestDefsForDay(1)),
 				weeklyQuest: false,
 				weekKey: getWeekKey(now),
 				notes: "",
@@ -311,10 +353,7 @@
 				const merged = defaultState();
 				// shallow+nested merge so new fields introduced later always exist
 				merged.hunter = Object.assign(merged.hunter, parsed.hunter);
-				merged.resources = Object.assign(
-					merged.resources,
-					parsed.resources,
-				);
+				merged.resources = Object.assign(merged.resources, parsed.resources);
 				if (parsed.resources && parsed.resources.followers)
 					merged.resources.followers = Object.assign(
 						merged.resources.followers,
@@ -322,18 +361,37 @@
 					);
 				merged.skills = Object.assign(merged.skills, parsed.skills);
 				merged.today = Object.assign(merged.today, parsed.today);
-				if (parsed.today && parsed.today.quests)
+				if (parsed.today && parsed.today.quests) {
 					merged.today.quests = Object.assign(
 						merged.today.quests,
 						parsed.today.quests,
 					);
+				}
+				if (
+					typeof merged.today.programDay !== "number" ||
+					!isFinite(merged.today.programDay)
+				) {
+					merged.today.programDay = 1;
+				}
 				merged.stats = Object.assign(merged.stats, parsed.stats);
 				merged.achievements = Object.assign(
 					merged.achievements,
 					parsed.achievements,
 				);
 				merged.claimedMilestones = parsed.claimedMilestones || [];
-				merged.logs = parsed.logs || [];
+				merged.logs = (parsed.logs || []).map((entry) => {
+					if (Array.isArray(entry.questChecks)) return entry;
+					return Object.assign({}, entry, {
+						programDay:
+							typeof entry.programDay === "number" ? entry.programDay : null,
+						questChecks: [
+							!!entry.build,
+							!!entry.learn,
+							!!entry.post,
+							!!entry.study,
+						],
+					});
+				});
 				merged.currentQuoteIndex =
 					typeof parsed.currentQuoteIndex === "number"
 						? parsed.currentQuoteIndex
@@ -403,10 +461,7 @@
 				state.claimedMilestones.push(m.level);
 				if (m.gold) state.resources.gold += m.gold;
 				if (m.gems) state.resources.gems += m.gems;
-				showToast(
-					"\u{1F381} Milestone Unlocked: " + m.label,
-					"milestone",
-				);
+				showToast("\u{1F381} Milestone Unlocked: " + m.label, "milestone");
 			}
 		});
 	}
@@ -432,10 +487,7 @@
 		if (h.level !== prevLevel) {
 			updateRankAndTitle();
 			if (h.level > prevLevel) {
-				showToast(
-					"\u26A1 LEVEL UP! You are now Level " + h.level,
-					"levelup",
-				);
+				showToast("\u26A1 LEVEL UP! You are now Level " + h.level, "levelup");
 			}
 			checkMilestones();
 		}
@@ -457,13 +509,15 @@
    DAY ROLLOVER
    ============================================================ */
 	function finalizeDay(day) {
+		const dayProgram = clamp(day.programDay || 1, 1, getTotalProgramDays());
+		const dayQuestDefs = getQuestDefsForDay(dayProgram);
 		let xpEarned = 0;
-		QUEST_DEFS.forEach((q) => {
+		dayQuestDefs.forEach((q) => {
 			if (day.quests[q.id]) xpEarned += q.xp;
 		});
 		if (day.weeklyQuest) xpEarned += WEEKLY_QUEST.xp;
 
-		const allDone = QUEST_DEFS.every((q) => day.quests[q.id]);
+		const allDone = dayQuestDefs.every((q) => day.quests[q.id]);
 		if (allDone) {
 			state.resources.streak += 1;
 		} else {
@@ -476,13 +530,11 @@
 
 		const entry = {
 			date: day.date,
-			dayName: new Date(day.date + "T00:00:00").toLocaleDateString(
-				"en-US",
-				{ weekday: "short" },
-			),
-			build: !!day.quests.build,
-			learn: !!day.quests.learn,
-			post: !!day.quests.post,
+			dayName: new Date(day.date + "T00:00:00").toLocaleDateString("en-US", {
+				weekday: "short",
+			}),
+			programDay: dayProgram,
+			questChecks: dayQuestDefs.map((q) => !!day.quests[q.id]),
 			weeklyQuest: !!day.weeklyQuest,
 			xpEarned: xpEarned,
 			totalXp: state.hunter.totalXpAllTime,
@@ -499,15 +551,15 @@
 			finalizeDay(state.today);
 			const prevWeekKey = state.today.weekKey;
 			const newWeekKey = getWeekKey(new Date());
+			const nextProgramDay = clamp(
+				(state.today.programDay || 1) + 1,
+				1,
+				getTotalProgramDays(),
+			);
 			state.today = {
 				date: current,
-				quests: {
-					learn: false,
-					build: false,
-					post: false,
-					study: false,
-					notes: false,
-				},
+				programDay: nextProgramDay,
+				quests: buildQuestStateForDefs(getQuestDefsForDay(nextProgramDay)),
 				weeklyQuest:
 					newWeekKey === prevWeekKey ? state.today.weeklyQuest : false,
 				weekKey: newWeekKey,
@@ -523,7 +575,7 @@
    QUEST INTERACTIONS
    ============================================================ */
 	function checkPerfectDayBonus() {
-		const allDone = QUEST_DEFS.every((q) => state.today.quests[q.id]);
+		const allDone = questDefsForToday.every((q) => state.today.quests[q.id]);
 		if (allDone && !state.today.bonusGranted) {
 			state.today.bonusGranted = true;
 			state.resources.gold += PERFECT_DAY_BONUS.gold;
@@ -531,10 +583,10 @@
 			state.stats.perfectDays += 1;
 			showToast(
 				"\u{1F31F} PERFECT DAY! Bonus +" +
-				PERFECT_DAY_BONUS.gold +
-				" Gold, +" +
-				PERFECT_DAY_BONUS.gems +
-				" Gems",
+					PERFECT_DAY_BONUS.gold +
+					" Gold, +" +
+					PERFECT_DAY_BONUS.gems +
+					" Gems",
 				"achievement",
 			);
 		} else if (!allDone && state.today.bonusGranted) {
@@ -551,16 +603,24 @@
 		}
 	}
 
-	const STAT_KEY_FOR_QUEST = {
-		learn: "totalLearns",
-		build: "totalBuilds",
-		post: "totalPosts",
-		study: "totalStudies",
-		notes: "totalNotesUpdates",
-	};
+	function getStatKeyForQuest(def) {
+		const text = (def.label + " " + def.desc).toLowerCase();
+		if (text.indexOf("post") !== -1) return "totalPosts";
+		if (text.indexOf("build") !== -1 || text.indexOf("ship") !== -1)
+			return "totalBuilds";
+		if (
+			text.indexOf("study") !== -1 ||
+			text.indexOf("learn") !== -1 ||
+			text.indexOf("tutorial") !== -1
+		)
+			return "totalLearns";
+		if (text.indexOf("note") !== -1 || text.indexOf("log") !== -1)
+			return "totalNotesUpdates";
+		return null;
+	}
 
 	function setQuestState(id, checked) {
-		const def = QUEST_DEFS.find((q) => q.id === id);
+		const def = questDefsForToday.find((q) => q.id === id);
 		if (!def) return;
 		if (state.today.quests[id] === checked) return;
 
@@ -568,10 +628,7 @@
 		const sign = checked ? 1 : -1;
 
 		addXP(sign * def.xp);
-		state.resources.gold = Math.max(
-			0,
-			state.resources.gold + sign * def.gold,
-		);
+		state.resources.gold = Math.max(0, state.resources.gold + sign * def.gold);
 		if (def.gems)
 			state.resources.gems = Math.max(
 				0,
@@ -585,8 +642,10 @@
 
 		if (checked) {
 			state.stats.totalQuestsCompleted += 1;
-			const statKey = STAT_KEY_FOR_QUEST[id];
-			if (statKey) state.stats[statKey] += 1;
+			const statKey = getStatKeyForQuest(def);
+			if (statKey && typeof state.stats[statKey] === "number") {
+				state.stats[statKey] += 1;
+			}
 		}
 
 		checkPerfectDayBonus();
@@ -684,8 +743,7 @@
 			"</div>";
 
 		document.getElementById("avatarRankBadge").textContent = h.rank;
-		document.getElementById("avatarRankBadge").style.background =
-			rankColor;
+		document.getElementById("avatarRankBadge").style.background = rankColor;
 	}
 
 	/* ============================================================
@@ -695,10 +753,7 @@
 		const r = state.resources;
 		const f = r.followers;
 		const totalReach =
-			(f.x || 0) +
-			(f.linkedin || 0) +
-			(f.instagram || 0) +
-			(f.framer || 0);
+			(f.x || 0) + (f.linkedin || 0) + (f.instagram || 0) + (f.framer || 0);
 
 		document.getElementById("resourcesPanel").innerHTML =
 			'<div class="card-title"><i class="fa-solid fa-coins"></i> Resources &amp; Social Stats</div>' +
@@ -761,50 +816,57 @@
    ============================================================ */
 	function renderQuestBoard() {
 		const q = state.today.quests;
-		const rows = QUEST_DEFS.map((def) => {
-			const done = !!q[def.id];
-			return (
-				'<div class="quest-row' +
-				(done ? " done" : "") +
-				'">' +
-				'<label class="quest-check">' +
-				'<input type="checkbox" data-quest="' +
-				def.id +
-				'" ' +
-				(done ? "checked" : "") +
-				">" +
-				'<i class="fa-solid fa-check"></i>' +
-				"</label>" +
-				'<div class="quest-icon"><i class="fa-solid ' +
-				def.icon +
-				'"></i></div>' +
-				'<div class="quest-info"><div class="name">' +
-				escapeHtml(def.label) +
-				'</div><div class="desc">' +
-				escapeHtml(def.desc) +
-				"</div></div>" +
-				'<div class="quest-reward">' +
-				'<span class="quest-badge xp">+' +
-				def.xp +
-				" XP</span>" +
-				'<span class="quest-badge gold"><i class="fa-solid fa-coins"></i>' +
-				def.gold +
-				"</span>" +
-				(def.gems
-					? '<span class="quest-badge gem"><i class="fa-solid fa-gem"></i>' +
-					def.gems +
-					"</span>"
-					: "") +
-				"</div>" +
-				"</div>"
-			);
-		}).join("");
+		const rows = questDefsForToday
+			.map((def) => {
+				const done = !!q[def.id];
+				return (
+					'<div class="quest-row' +
+					(done ? " done" : "") +
+					'">' +
+					'<label class="quest-check">' +
+					'<input type="checkbox" data-quest="' +
+					def.id +
+					'" ' +
+					(done ? "checked" : "") +
+					">" +
+					'<i class="fa-solid fa-check"></i>' +
+					"</label>" +
+					'<div class="quest-icon"><i class="fa-solid ' +
+					def.icon +
+					'"></i></div>' +
+					'<div class="quest-info"><div class="name">' +
+					escapeHtml(def.label) +
+					'</div><div class="desc">' +
+					escapeHtml(def.desc) +
+					"</div></div>" +
+					'<div class="quest-reward">' +
+					'<span class="quest-badge xp">+' +
+					def.xp +
+					" XP</span>" +
+					'<span class="quest-badge gold"><i class="fa-solid fa-coins"></i>' +
+					def.gold +
+					"</span>" +
+					(def.gems
+						? '<span class="quest-badge gem"><i class="fa-solid fa-gem"></i>' +
+							def.gems +
+							"</span>"
+						: "") +
+					"</div>" +
+					"</div>"
+				);
+			})
+			.join("");
 
 		const weeklyDone = !!state.today.weeklyQuest;
-		const allDone = QUEST_DEFS.every((d) => q[d.id]);
+		const allDone = questDefsForToday.every((d) => q[d.id]);
+		const totalDays = getTotalProgramDays();
+		const dayProgressLabel =
+			"Day " + state.today.programDay + " / " + totalDays + " \u2022 4 quests";
 
 		document.getElementById("questBoard").innerHTML =
-			'<div class="card-title"><i class="fa-solid fa-list-check"></i> Daily Quest Board <span class="sub">Resets at midnight</span></div>' +
+			'<div class="card-title"><i class="fa-solid fa-list-check"></i> Daily Quest Board <span class="sub">' +
+			dayProgressLabel +
+			"</span></div>" +
 			'<div class="quest-grid">' +
 			rows +
 			"</div>" +
@@ -917,10 +979,20 @@
 			{ weekday: "short" },
 		);
 		const liveXp =
-			QUEST_DEFS.reduce(
+			questDefsForToday.reduce(
 				(sum, q) => sum + (t.quests[q.id] ? q.xp : 0),
 				0,
 			) + (t.weeklyQuest ? WEEKLY_QUEST.xp : 0);
+		const todayQuestCells = questDefsForToday
+			.map(
+				(def) =>
+					'<td><input type="checkbox" class="log-check" data-log-quest="' +
+					def.id +
+					'" ' +
+					(t.quests[def.id] ? "checked" : "") +
+					"></td>",
+			)
+			.join("");
 
 		let todayRow =
 			'<tr class="today-row">' +
@@ -928,17 +1000,13 @@
 			t.date +
 			"</td>" +
 			"<td>" +
+			"Day " +
+			t.programDay +
+			"</td>" +
+			"<td>" +
 			todayName +
 			'<span class="today-tag">TODAY</span></td>' +
-			'<td><input type="checkbox" class="log-check" data-log-quest="build" ' +
-			(t.quests.build ? "checked" : "") +
-			"></td>" +
-			'<td><input type="checkbox" class="log-check" data-log-quest="learn" ' +
-			(t.quests.learn ? "checked" : "") +
-			"></td>" +
-			'<td><input type="checkbox" class="log-check" data-log-quest="post" ' +
-			(t.quests.post ? "checked" : "") +
-			"></td>" +
+			todayQuestCells +
 			'<td><input type="checkbox" class="log-check" id="logWeeklyCheck" ' +
 			(t.weeklyQuest ? "checked" : "") +
 			"></td>" +
@@ -957,24 +1025,27 @@
 			"</tr>";
 
 		const historyRows = state.logs
-			.map(
-				(entry) =>
+			.map((entry) => {
+				const checks = Array.isArray(entry.questChecks)
+					? entry.questChecks
+					: [];
+				const questCells = new Array(QUESTS_PER_DAY)
+					.fill(false)
+					.map((_, i) => "<td>" + mark(!!checks[i]) + "</td>")
+					.join("");
+				return (
 					"<tr>" +
 					"<td>" +
 					entry.date +
 					"</td>" +
 					"<td>" +
+					"Day " +
+					(entry.programDay || "-") +
+					"</td>" +
+					"<td>" +
 					entry.dayName +
 					"</td>" +
-					"<td>" +
-					mark(entry.build) +
-					"</td>" +
-					"<td>" +
-					mark(entry.learn) +
-					"</td>" +
-					"<td>" +
-					mark(entry.post) +
-					"</td>" +
+					questCells +
 					"<td>" +
 					mark(entry.weeklyQuest) +
 					"</td>" +
@@ -992,8 +1063,9 @@
 					'">' +
 					(escapeHtml(entry.notes) || "&mdash;") +
 					"</span></td>" +
-					"</tr>",
-			)
+					"</tr>"
+				);
+			})
 			.join("");
 
 		document.getElementById("logPanel").innerHTML =
@@ -1002,7 +1074,7 @@
 			" days logged</span></div>" +
 			'<div class="log-table-wrap"><table class="log-table">' +
 			"<thead><tr>" +
-			"<th>Date</th><th>Day</th><th>Build?</th><th>Learn?</th><th>Post?</th><th>Weekly?</th><th>XP Earned</th><th>Total XP</th><th>Level</th><th>Notes</th>" +
+			"<th>Date</th><th>Program Day</th><th>Day</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Weekly?</th><th>XP Earned</th><th>Total XP</th><th>Level</th><th>Notes</th>" +
 			"</tr></thead>" +
 			"<tbody>" +
 			todayRow +
@@ -1138,6 +1210,7 @@
 		)
 			return;
 		state = defaultState();
+		syncQuestDefsForToday();
 		saveState();
 		renderAll();
 		showToast("Data reset. Welcome back, E-Rank Hunter.", "rankup");
@@ -1146,18 +1219,57 @@
 	/* ============================================================
    INIT
    ============================================================ */
-	function init() {
+	async function loadQuestProgram() {
+		try {
+			const res = await fetch("framer.json", { cache: "no-store" });
+			if (!res.ok) {
+				throw new Error("Failed to fetch framer.json: " + res.status);
+			}
+			const raw = await res.json();
+			if (!Array.isArray(raw) || raw.length < PROGRAM_DAYS_TOTAL) {
+				throw new Error("framer.json does not contain 60 days");
+			}
+			questProgram = raw.slice(0, PROGRAM_DAYS_TOTAL).map((day, dayIndex) => {
+				const quests = Array.isArray(day && day.quests) ? day.quests : [];
+				return {
+					day: dayIndex + 1,
+					quests: quests
+						.slice(0, QUESTS_PER_DAY)
+						.map((quest, questIndex) =>
+							normalizeQuestDef(
+								quest,
+								"day_" + (dayIndex + 1) + "_quest_" + (questIndex + 1),
+							),
+						),
+				};
+			});
+			const invalidDay = questProgram.find(
+				(d) => d.quests.length !== QUESTS_PER_DAY,
+			);
+			if (invalidDay) {
+				throw new Error("One or more days do not have 4 quests");
+			}
+		} catch (err) {
+			console.error(err);
+			questProgram = [];
+			showToast(
+				"Could not load quest plan JSON. Using fallback quests.",
+				"milestone",
+			);
+		}
+	}
+
+	async function init() {
+		await loadQuestProgram();
 		state = loadState();
+		syncQuestDefsForToday();
 		checkRollover();
+		syncQuestDefsForToday();
 		computeAchievements();
 		renderAll();
 
-		document
-			.getElementById("resetBtn")
-			.addEventListener("click", resetAll);
-		document
-			.getElementById("newQuoteBtn")
-			.addEventListener("click", newQuote);
+		document.getElementById("resetBtn").addEventListener("click", resetAll);
+		document.getElementById("newQuoteBtn").addEventListener("click", newQuote);
 	}
 
 	document.addEventListener("DOMContentLoaded", init);

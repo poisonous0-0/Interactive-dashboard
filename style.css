@@ -87,11 +87,7 @@ a {
 	z-index: 0;
 	background-image:
 		linear-gradient(rgba(179, 136, 255, 0.035) 1px, transparent 1px),
-		linear-gradient(
-			90deg,
-			rgba(179, 136, 255, 0.035) 1px,
-			transparent 1px
-		);
+		linear-gradient(90deg, rgba(179, 136, 255, 0.035) 1px, transparent 1px);
 	background-size: 42px 42px;
 	mask-image: radial-gradient(
 		ellipse 80% 60% at 50% 20%,
@@ -937,7 +933,7 @@ input[type="text"] {
 table.log-table {
 	width: 100%;
 	border-collapse: collapse;
-	min-width: 760px;
+	min-width: 980px;
 	font-size: 12.5px;
 }
 table.log-table thead th {
@@ -1295,7 +1291,11 @@ table.log-table tbody tr:hover {
 
 .btn-generate-quests {
 	flex: 1;
-	background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple) 100%);
+	background: linear-gradient(
+		135deg,
+		var(--purple-deep) 0%,
+		var(--purple) 100%
+	);
 	border: 1px solid var(--purple-light);
 	color: #fff;
 	padding: 9px 18px;
@@ -1312,7 +1312,11 @@ table.log-table tbody tr:hover {
 	box-shadow: 0 0 14px rgba(138, 43, 226, 0.4);
 }
 .btn-generate-quests:hover {
-	background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+	background: linear-gradient(
+		135deg,
+		var(--purple) 0%,
+		var(--purple-light) 100%
+	);
 	box-shadow: 0 0 20px rgba(179, 136, 255, 0.7);
 }
 
@@ -1353,8 +1357,13 @@ table.log-table tbody tr:hover {
 }
 
 @keyframes pulse {
-	0%, 100% { opacity: 0.6; }
-	50% { opacity: 1; }
+	0%,
+	100% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
 }
 
 .api-key-container {
