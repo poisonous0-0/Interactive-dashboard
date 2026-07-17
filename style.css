@@ -677,6 +677,19 @@ input[type="text"] {
 	flex-direction: column;
 	gap: 10px;
 }
+.quest-lock-banner {
+	margin-bottom: 12px;
+	padding: 10px 12px;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 209, 102, 0.45);
+	background: rgba(255, 209, 102, 0.09);
+	color: var(--gold);
+	font-size: 12px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
 .quest-row {
 	display: flex;
 	align-items: center;
@@ -791,6 +804,61 @@ input[type="text"] {
 .quest-badge.gem {
 	background: rgba(63, 197, 255, 0.14);
 	color: var(--blue);
+}
+.quest-badge.optional {
+	background: rgba(255, 255, 255, 0.08);
+	color: var(--text-faint);
+}
+
+.manual-divider {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 18px 0 10px;
+	color: var(--text-faint);
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: 700;
+}
+.manual-divider::before,
+.manual-divider::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--line);
+}
+.quest-row.manual .quest-icon {
+	background: rgba(63, 197, 255, 0.1);
+	color: var(--blue);
+}
+.quest-row.manual.done {
+	background: rgba(63, 197, 255, 0.08);
+	border-color: rgba(63, 197, 255, 0.28);
+}
+.manual-quest-actions {
+	margin-top: 10px;
+	display: flex;
+	justify-content: flex-end;
+}
+.btn-add-manual-quest {
+	border: 1px solid var(--line-strong);
+	background: rgba(63, 197, 255, 0.12);
+	color: var(--blue);
+	border-radius: 8px;
+	padding: 8px 12px;
+	font-size: 12px;
+	font-weight: 700;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+.btn-add-manual-quest:hover {
+	background: rgba(63, 197, 255, 0.2);
+}
+.btn-add-manual-quest:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 .weekly-divider {

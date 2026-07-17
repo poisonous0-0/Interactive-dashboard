@@ -276,6 +276,21 @@
 		return next;
 	}
 
+	function startProgramDay(programDay, date, prevWeekKey, currentWeeklyQuest) {
+		const nextWeekKey = getWeekKey(new Date(date + "T00:00:00"));
+		return {
+			date: date,
+			programDay: programDay,
+			quests: buildQuestStateForDefs(getQuestDefsForDay(programDay)),
+			weeklyQuest: nextWeekKey === prevWeekKey ? currentWeeklyQuest : false,
+			weekKey: nextWeekKey,
+			notes: "",
+			bonusGranted: false,
+			lockedCarryOver: false,
+			manualQuests: [],
+		};
+	}
+
 	function syncQuestDefsForToday() {
 		if (
 			typeof state.today.programDay !== "number" ||
@@ -290,6 +305,9 @@
 			questDefsForToday,
 			state.today.quests,
 		);
+		if (!Array.isArray(state.today.manualQuests)) {
+			state.today.manualQuests = [];
+		}
 	}
 
 	function defaultState() {
@@ -327,6 +345,8 @@
 				weekKey: getWeekKey(now),
 				notes: "",
 				bonusGranted: false,
+				lockedCarryOver: false,
+				manualQuests: [],
 			},
 			stats: {
 				totalQuestsCompleted: 0,
@@ -367,6 +387,17 @@
 						parsed.today.quests,
 					);
 				}
+				merged.today.manualQuests = Array.isArray(
+					parsed.today && parsed.today.manualQuests,
+				)
+					? parsed.today.manualQuests
+							.map((item) => ({
+								id: String(item && item.id ? item.id : ""),
+								label: String(item && item.label ? item.label : ""),
+								done: !!(item && item.done),
+							}))
+							.filter((item) => item.id && item.label)
+					: [];
 				if (
 					typeof merged.today.programDay !== "number" ||
 					!isFinite(merged.today.programDay)
@@ -548,25 +579,36 @@
 	function checkRollover() {
 		const current = todayStr();
 		if (state.today.date !== current) {
-			finalizeDay(state.today);
 			const prevWeekKey = state.today.weekKey;
-			const newWeekKey = getWeekKey(new Date());
-			const nextProgramDay = clamp(
-				(state.today.programDay || 1) + 1,
-				1,
-				getTotalProgramDays(),
-			);
-			state.today = {
-				date: current,
-				programDay: nextProgramDay,
-				quests: buildQuestStateForDefs(getQuestDefsForDay(nextProgramDay)),
-				weeklyQuest:
-					newWeekKey === prevWeekKey ? state.today.weeklyQuest : false,
-				weekKey: newWeekKey,
-				notes: "",
-				bonusGranted: false,
-			};
-			state.resources.energy = 100;
+			const allDone = questDefsForToday.every((q) => state.today.quests[q.id]);
+			if (allDone) {
+				finalizeDay(state.today);
+				const nextProgramDay = clamp(
+					(state.today.programDay || 1) + 1,
+					1,
+					getTotalProgramDays(),
+				);
+				state.today = startProgramDay(
+					nextProgramDay,
+					current,
+					prevWeekKey,
+					state.today.weeklyQuest,
+				);
+				state.resources.energy = 100;
+			} else {
+				state.resources.streak = 0;
+				state.today.date = current;
+				state.today.weeklyQuest =
+					getWeekKey(new Date()) === prevWeekKey
+						? state.today.weeklyQuest
+						: false;
+				state.today.weekKey = getWeekKey(new Date());
+				state.today.lockedCarryOver = true;
+				showToast(
+					"Previous day is incomplete. Finish pending quests to unlock the next day.",
+					"achievement",
+				);
+			}
 			saveState();
 		}
 	}
@@ -648,6 +690,32 @@
 			}
 		}
 
+		if (
+			state.today.lockedCarryOver &&
+			questDefsForToday.every((questDef) => state.today.quests[questDef.id])
+		) {
+			const prevWeekKey = state.today.weekKey;
+			finalizeDay(state.today);
+			const nextProgramDay = clamp(
+				(state.today.programDay || 1) + 1,
+				1,
+				getTotalProgramDays(),
+			);
+			if (nextProgramDay !== state.today.programDay) {
+				state.today = startProgramDay(
+					nextProgramDay,
+					todayStr(),
+					prevWeekKey,
+					state.today.weeklyQuest,
+				);
+				state.resources.energy = 100;
+				syncQuestDefsForToday();
+				showToast("Pending day cleared. New day quests unlocked.", "levelup");
+			} else {
+				state.today.lockedCarryOver = false;
+			}
+		}
+
 		checkPerfectDayBonus();
 		computeAchievements();
 		saveState();
@@ -670,6 +738,31 @@
 		);
 		saveState();
 		renderAll();
+	}
+
+	function addManualQuest() {
+		const text = prompt("Add optional manual quest:");
+		if (text == null) return;
+		const label = text.trim();
+		if (!label) {
+			showToast("Manual quest cannot be empty.", "achievement");
+			return;
+		}
+		state.today.manualQuests.push({
+			id: "manual_" + Date.now() + "_" + Math.floor(Math.random() * 1000),
+			label: label,
+			done: false,
+		});
+		saveState();
+		renderQuestBoard();
+	}
+
+	function setManualQuestState(id, checked) {
+		const item = state.today.manualQuests.find((q) => q.id === id);
+		if (!item || item.done === checked) return;
+		item.done = checked;
+		saveState();
+		renderQuestBoard();
 	}
 
 	function adjustSkill(id, delta) {
@@ -859,6 +952,33 @@
 
 		const weeklyDone = !!state.today.weeklyQuest;
 		const allDone = questDefsForToday.every((d) => q[d.id]);
+		const manualQuests = Array.isArray(state.today.manualQuests)
+			? state.today.manualQuests
+			: [];
+		const manualRows = manualQuests
+			.map((item) => {
+				const done = !!item.done;
+				return (
+					'<div class="quest-row manual' +
+					(done ? " done" : "") +
+					'">' +
+					'<label class="quest-check">' +
+					'<input type="checkbox" data-manual-quest="' +
+					item.id +
+					'" ' +
+					(done ? "checked" : "") +
+					">" +
+					'<i class="fa-solid fa-check"></i>' +
+					"</label>" +
+					'<div class="quest-icon"><i class="fa-solid fa-pen-to-square"></i></div>' +
+					'<div class="quest-info"><div class="name">' +
+					escapeHtml(item.label) +
+					'</div><div class="desc">Optional manual quest (no XP / gold / gems)</div></div>' +
+					'<div class="quest-reward"><span class="quest-badge optional">Optional</span></div>' +
+					"</div>"
+				);
+			})
+			.join("");
 		const totalDays = getTotalProgramDays();
 		const dayProgressLabel =
 			"Day " + state.today.programDay + " / " + totalDays + " \u2022 4 quests";
@@ -867,6 +987,11 @@
 			'<div class="card-title"><i class="fa-solid fa-list-check"></i> Daily Quest Board <span class="sub">' +
 			dayProgressLabel +
 			"</span></div>" +
+			(state.today.lockedCarryOver
+				? '<div class="quest-lock-banner"><i class="fa-solid fa-lock"></i> Day ' +
+					state.today.programDay +
+					" is pending. Complete all 4 quests first to unlock the next day.</div>"
+				: "") +
 			'<div class="quest-grid">' +
 			rows +
 			"</div>" +
@@ -893,6 +1018,15 @@
 			"</div>" +
 			(allDone
 				? '<div class="day-perfect-banner"><i class="fa-solid fa-star"></i> All daily quests complete &mdash; Perfect Day bonus granted!</div>'
+				: "") +
+			(allDone || manualQuests.length > 0
+				? '<div class="manual-divider">Optional Manual Quests</div>' +
+					'<div class="quest-grid">' +
+					manualRows +
+					"</div>" +
+					'<div class="manual-quest-actions"><button class="btn-add-manual-quest" id="addManualQuestBtn" ' +
+					(allDone ? "" : "disabled") +
+					'><i class="fa-solid fa-plus"></i> Add Manual Quest</button></div>'
 				: "");
 
 		document.querySelectorAll("[data-quest]").forEach((inp) => {
@@ -905,6 +1039,15 @@
 			weeklyEl.addEventListener("change", function () {
 				setWeeklyQuest(this.checked);
 			});
+		}
+		document.querySelectorAll("[data-manual-quest]").forEach((inp) => {
+			inp.addEventListener("change", function () {
+				setManualQuestState(this.getAttribute("data-manual-quest"), this.checked);
+			});
+		});
+		const addManualQuestBtn = document.getElementById("addManualQuestBtn");
+		if (addManualQuestBtn) {
+			addManualQuestBtn.addEventListener("click", addManualQuest);
 		}
 	}
 
