@@ -1,0 +1,2702 @@
+[
+  {
+    "day": 1,
+    "quests": [
+      {
+        "id": "day_1_quest_1",
+        "label": "Explore the Framer Interface",
+        "desc": "Tour the canvas, layers panel, and properties panel, then create your first blank project.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-compass"
+      },
+      {
+        "id": "day_1_quest_2",
+        "label": "Frame Fundamentals",
+        "desc": "Create and nest Frames, then practice resizing, renaming, and organizing layers.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-vector-square"
+      },
+      {
+        "id": "day_1_quest_3",
+        "label": "Shape and Fill Basics",
+        "desc": "Add rectangle, ellipse, and path shapes, then apply fills, borders, and corner radius.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 8,
+        "icon": "fa-shapes"
+      },
+      {
+        "id": "day_1_quest_4",
+        "label": "Canvas Cleanup Challenge",
+        "desc": "Rebuild the official Framer Getting Started demo page from scratch using only Frames and shapes.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 11,
+        "icon": "fa-broom"
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "quests": [
+      {
+        "id": "day_2_quest_1",
+        "label": "Vertical Stack Basics",
+        "desc": "Build a vertical Stack and configure gap, padding, and alignment.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-layer-group"
+      },
+      {
+        "id": "day_2_quest_2",
+        "label": "Horizontal Stack Basics",
+        "desc": "Build a horizontal Stack for a navbar-style row of items.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-bars"
+      },
+      {
+        "id": "day_2_quest_3",
+        "label": "Nested Stacks",
+        "desc": "Combine vertical and horizontal Stacks to build a pricing card layout.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 8,
+        "icon": "fa-object-group"
+      },
+      {
+        "id": "day_2_quest_4",
+        "label": "Distribution and Fit",
+        "desc": "Practice fit, fixed, and 1fr sizing plus distribution settings across a 3-column Stack.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 11,
+        "icon": "fa-ruler-combined"
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "quests": [
+      {
+        "id": "day_3_quest_1",
+        "label": "Grid Basics",
+        "desc": "Create a responsive Grid layout and set row and column counts.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-table-cells"
+      },
+      {
+        "id": "day_3_quest_2",
+        "label": "Grid Gallery",
+        "desc": "Build an image gallery using a Grid with consistent gaps.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-images"
+      },
+      {
+        "id": "day_3_quest_3",
+        "label": "Grid vs Stack",
+        "desc": "Rebuild yesterday's pricing card layout using Grid instead of Stack and compare the tradeoffs.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 9,
+        "icon": "fa-code-compare"
+      },
+      {
+        "id": "day_3_quest_4",
+        "label": "Auto-Sizing Grid",
+        "desc": "Configure a Grid with mixed fixed and auto-sized tracks for a dashboard-style layout.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 12,
+        "icon": "fa-border-all"
+      }
+    ]
+  },
+  {
+    "day": 4,
+    "quests": [
+      {
+        "id": "day_4_quest_1",
+        "label": "Text Styles 101",
+        "desc": "Create and apply a heading, subheading, and body Text Style.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-font"
+      },
+      {
+        "id": "day_4_quest_2",
+        "label": "Build a Type Scale",
+        "desc": "Build a full type scale covering H1 to H4, body, and caption using consistent ratios.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-text-height"
+      },
+      {
+        "id": "day_4_quest_3",
+        "label": "Web Fonts",
+        "desc": "Import and apply a Google Font and set fallback fonts for performance.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 9,
+        "icon": "fa-book"
+      },
+      {
+        "id": "day_4_quest_4",
+        "label": "Typographic Hierarchy Replica",
+        "desc": "Recreate the text hierarchy of a real landing page using only Text Styles.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 12,
+        "icon": "fa-heading"
+      }
+    ]
+  },
+  {
+    "day": 5,
+    "quests": [
+      {
+        "id": "day_5_quest_1",
+        "label": "Build a Color System",
+        "desc": "Build a color palette using Framer Color Styles for primary, secondary, and neutral tones.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-palette"
+      },
+      {
+        "id": "day_5_quest_2",
+        "label": "Effects and Shadows",
+        "desc": "Apply box shadows, blurs, and opacity effects to a card component.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-circle-half-stroke"
+      },
+      {
+        "id": "day_5_quest_3",
+        "label": "Gradients",
+        "desc": "Create linear and radial gradients for a hero background.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 10,
+        "icon": "fa-fill-drip"
+      },
+      {
+        "id": "day_5_quest_4",
+        "label": "Dark Mode Pass",
+        "desc": "Duplicate a page and restyle it with a dark-mode color palette using Color Styles.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-moon"
+      }
+    ]
+  },
+  {
+    "day": 6,
+    "quests": [
+      {
+        "id": "day_6_quest_1",
+        "label": "Relative Positioning",
+        "desc": "Practice relative layout inside Stacks using offsets.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-arrows-up-down-left-right"
+      },
+      {
+        "id": "day_6_quest_2",
+        "label": "Absolute Positioning",
+        "desc": "Pin an element with Absolute positioning inside a Frame, such as a badge on a card.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-thumbtack"
+      },
+      {
+        "id": "day_6_quest_3",
+        "label": "Layering and Z-Index",
+        "desc": "Build an overlapping image collage using z-index and layer order.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 10,
+        "icon": "fa-layer-group"
+      },
+      {
+        "id": "day_6_quest_4",
+        "label": "Hybrid Layout Challenge",
+        "desc": "Combine Stacks, Grids, and Absolute positioning in a single hero section.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-diagram-project"
+      }
+    ]
+  },
+  {
+    "day": 7,
+    "quests": [
+      {
+        "id": "day_7_quest_1",
+        "label": "Breakpoint Basics",
+        "desc": "Set up Desktop, Tablet, and Phone breakpoints for a page.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-mobile-screen"
+      },
+      {
+        "id": "day_7_quest_2",
+        "label": "Responsive Stacks",
+        "desc": "Adjust Stack direction and gap across breakpoints for a features section.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-arrows-left-right"
+      },
+      {
+        "id": "day_7_quest_3",
+        "label": "Responsive Typography",
+        "desc": "Scale font sizes and line-heights per breakpoint.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 11,
+        "icon": "fa-text-width"
+      },
+      {
+        "id": "day_7_quest_4",
+        "label": "Full Responsive Pass",
+        "desc": "Take one component from yesterday and make it fully responsive across every breakpoint.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-display"
+      }
+    ]
+  },
+  {
+    "day": 8,
+    "quests": [
+      {
+        "id": "day_8_quest_1",
+        "label": "Your First Component",
+        "desc": "Convert a card into a reusable Component.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-puzzle-piece"
+      },
+      {
+        "id": "day_8_quest_2",
+        "label": "Component Variants",
+        "desc": "Add default, hover, and active variants to a button Component.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-shuffle"
+      },
+      {
+        "id": "day_8_quest_3",
+        "label": "Nested Components",
+        "desc": "Build a card Component that uses a button Component inside it.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 11,
+        "icon": "fa-cubes"
+      },
+      {
+        "id": "day_8_quest_4",
+        "label": "Component Library Sprint",
+        "desc": "Build a mini design-system page featuring five reusable Components.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-swatchbook"
+      }
+    ]
+  },
+  {
+    "day": 9,
+    "quests": [
+      {
+        "id": "day_9_quest_1",
+        "label": "Hover States",
+        "desc": "Add hover transitions to buttons and cards.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-hand-pointer"
+      },
+      {
+        "id": "day_9_quest_2",
+        "label": "Tap Interactions",
+        "desc": "Add tap and click feedback animations to an interactive element.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-computer-mouse"
+      },
+      {
+        "id": "day_9_quest_3",
+        "label": "Page Transitions",
+        "desc": "Link two pages together with a smooth page transition effect.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 11,
+        "icon": "fa-right-left"
+      },
+      {
+        "id": "day_9_quest_4",
+        "label": "Micro-Interaction Set",
+        "desc": "Build three distinct micro-interactions: a toggle, an accordion, and a tooltip.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-bolt"
+      }
+    ]
+  },
+  {
+    "day": 10,
+    "quests": [
+      {
+        "id": "day_10_quest_1",
+        "label": "Scroll-Triggered Reveal",
+        "desc": "Animate elements to fade and slide in as the user scrolls.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-arrow-down-wide-short"
+      },
+      {
+        "id": "day_10_quest_2",
+        "label": "Parallax Basics",
+        "desc": "Build a simple parallax effect between two layers.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 6,
+        "icon": "fa-layer-group"
+      },
+      {
+        "id": "day_10_quest_3",
+        "label": "Sticky Elements",
+        "desc": "Create a sticky navbar that changes style once the page is scrolled.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 12,
+        "icon": "fa-thumbtack"
+      },
+      {
+        "id": "day_10_quest_4",
+        "label": "Scroll Story Section",
+        "desc": "Build a scroll-driven storytelling section with three sequential reveals.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 15,
+        "icon": "fa-scroll"
+      }
+    ]
+  },
+  {
+    "day": 11,
+    "quests": [
+      {
+        "id": "day_11_quest_1",
+        "label": "Form Basics",
+        "desc": "Build a contact form with text and email inputs.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-envelope-open-text"
+      },
+      {
+        "id": "day_11_quest_2",
+        "label": "Input Styling and States",
+        "desc": "Style the focus, error, and success states for form fields.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 6,
+        "icon": "fa-keyboard"
+      },
+      {
+        "id": "day_11_quest_3",
+        "label": "Form Validation Logic",
+        "desc": "Add basic validation feedback using Framer interactions.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 12,
+        "icon": "fa-circle-check"
+      },
+      {
+        "id": "day_11_quest_4",
+        "label": "Newsletter Signup Component",
+        "desc": "Build a polished, reusable newsletter signup Component.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 15,
+        "icon": "fa-paper-plane"
+      }
+    ]
+  },
+  {
+    "day": 12,
+    "quests": [
+      {
+        "id": "day_12_quest_1",
+        "label": "Speed Rebuild Challenge",
+        "desc": "Rebuild a real hero section from a live site in under 60 minutes using Stacks and Components.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-stopwatch"
+      },
+      {
+        "id": "day_12_quest_2",
+        "label": "Layout Systems Review",
+        "desc": "Combine Stacks, Grids, and Absolute positioning into one complex landing section.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 7,
+        "icon": "fa-diagram-project"
+      },
+      {
+        "id": "day_12_quest_3",
+        "label": "Interaction Showcase",
+        "desc": "Assemble a single page demonstrating four different interaction types learned this phase.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-star"
+      },
+      {
+        "id": "day_12_quest_4",
+        "label": "Foundations Certification Page",
+        "desc": "Build and polish a Foundations Complete portfolio piece proving mastery of every Phase 1 skill.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 1,
+        "energy": 16,
+        "icon": "fa-trophy"
+      }
+    ]
+  },
+  {
+    "day": 13,
+    "quests": [
+      {
+        "id": "day_13_quest_1",
+        "label": "Landing Page Wireframe",
+        "desc": "Plan and wireframe a single-page personal landing page with hero, about, work, and contact sections.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-pen-ruler"
+      },
+      {
+        "id": "day_13_quest_2",
+        "label": "Build the Static Landing Page",
+        "desc": "Build the full static landing page using the Stacks, Grids, and Components mastered in Phase 1.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 7,
+        "icon": "fa-hammer"
+      },
+      {
+        "id": "day_13_quest_3",
+        "label": "Kickoff Announcement",
+        "desc": "Post on LinkedIn/Instagram introducing your 60-Day Framer Challenge and today's landing page project.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_13_quest_4",
+        "label": "Build-in-Public Thread",
+        "desc": "Post on X announcing the start of your build-in-public journey with a screenshot of the landing page.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 14,
+    "quests": [
+      {
+        "id": "day_14_quest_1",
+        "label": "Animate the Hero",
+        "desc": "Add complex enter animations and staggered transitions to the hero section.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-wand-magic-sparkles"
+      },
+      {
+        "id": "day_14_quest_2",
+        "label": "Scroll Effects and Breakpoints",
+        "desc": "Add custom scroll effects and finalize responsive breakpoints across the landing page.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 8,
+        "icon": "fa-arrow-down-wide-short"
+      },
+      {
+        "id": "day_14_quest_3",
+        "label": "Before and After Share",
+        "desc": "Post on LinkedIn/Instagram with a before-and-after clip of the newly animated landing page.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_14_quest_4",
+        "label": "Motion Clip Post",
+        "desc": "Post a short screen recording of the scroll animation on X.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 17,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 15,
+    "quests": [
+      {
+        "id": "day_15_quest_1",
+        "label": "CMS Collection Setup",
+        "desc": "Create a CMS Collection for your next project and define its fields.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-database"
+      },
+      {
+        "id": "day_15_quest_2",
+        "label": "CMS List Page",
+        "desc": "Build a dynamic list page that pulls cards from the CMS Collection.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 8,
+        "icon": "fa-list"
+      },
+      {
+        "id": "day_15_quest_3",
+        "label": "Multi-Page Architecture",
+        "desc": "Plan the sitemap for a multi-page CMS-driven site covering Home, Blog, About, and Contact.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-sitemap"
+      },
+      {
+        "id": "day_15_quest_4",
+        "label": "First CMS Page Share",
+        "desc": "Post on X with a screenshot of your first CMS-powered page.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 17,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 16,
+    "quests": [
+      {
+        "id": "day_16_quest_1",
+        "label": "Dynamic Detail Page",
+        "desc": "Build a CMS detail template page that renders individual entries.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 5,
+        "icon": "fa-file-lines"
+      },
+      {
+        "id": "day_16_quest_2",
+        "label": "Rich Content Fields",
+        "desc": "Add rich text, image, and reference fields to the CMS Collection and display them on the page.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 8,
+        "icon": "fa-photo-film"
+      },
+      {
+        "id": "day_16_quest_3",
+        "label": "Blog Build Carousel",
+        "desc": "Post a carousel on LinkedIn/Instagram walking through the CMS blog build.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_16_quest_4",
+        "label": "Quick CMS Tip",
+        "desc": "Post an X tip about something you learned working with Framer CMS today.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 17,
+        "icon": "fa-lightbulb"
+      }
+    ]
+  },
+  {
+    "day": 17,
+    "quests": [
+      {
+        "id": "day_17_quest_1",
+        "label": "Global Navbar Component",
+        "desc": "Build a reusable navbar Component shared across every page of the site.",
+        "xp": 5,
+        "gold": 2,
+        "gems": 0,
+        "energy": 6,
+        "icon": "fa-bars"
+      },
+      {
+        "id": "day_17_quest_2",
+        "label": "Footer and Sitemap Links",
+        "desc": "Build a footer Component with sitemap links and social icons.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 9,
+        "icon": "fa-shoe-prints"
+      },
+      {
+        "id": "day_17_quest_3",
+        "label": "Information Architecture Post",
+        "desc": "Share your multi-page site structure on LinkedIn/Instagram and what you learned about information architecture.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 15,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_17_quest_4",
+        "label": "Day 17 Progress Update",
+        "desc": "Post a day-17-of-60 build-in-public update on X with a short clip.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 18,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 18,
+    "quests": [
+      {
+        "id": "day_18_quest_1",
+        "label": "Category Filtering",
+        "desc": "Add category and tag-based filtering to your CMS list page.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 6,
+        "icon": "fa-filter"
+      },
+      {
+        "id": "day_18_quest_2",
+        "label": "Search Functionality",
+        "desc": "Add a working search input that filters CMS items live.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 9,
+        "icon": "fa-magnifying-glass"
+      },
+      {
+        "id": "day_18_quest_3",
+        "label": "Sort Controls",
+        "desc": "Add sort-by controls for newest, popular, and A-Z ordering to the filtered list.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 15,
+        "icon": "fa-arrow-down-a-z"
+      },
+      {
+        "id": "day_18_quest_4",
+        "label": "Filter Demo GIF",
+        "desc": "Post a demo GIF on X showing off your working CMS filter and search system.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 18,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 19,
+    "quests": [
+      {
+        "id": "day_19_quest_1",
+        "label": "Reading Experience Polish",
+        "desc": "Refine typography, spacing, and imagery for the blog detail page reading experience.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 7,
+        "icon": "fa-book-open"
+      },
+      {
+        "id": "day_19_quest_2",
+        "label": "SEO Meta Basics",
+        "desc": "Add page titles, meta descriptions, and social share images to every CMS page.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 10,
+        "icon": "fa-magnifying-glass-chart"
+      },
+      {
+        "id": "day_19_quest_3",
+        "label": "Launch Announcement",
+        "desc": "Publish a LinkedIn/Instagram post announcing your CMS blog is live as project number two.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_19_quest_4",
+        "label": "Ask for Feedback",
+        "desc": "Post the live link on X and ask your audience for feedback.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 20,
+    "quests": [
+      {
+        "id": "day_20_quest_1",
+        "label": "Full Site QA Pass",
+        "desc": "Test every page across all breakpoints and fix any layout bugs you find.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 7,
+        "icon": "fa-bug"
+      },
+      {
+        "id": "day_20_quest_2",
+        "label": "Case Study Write-Up",
+        "desc": "Write a short case study describing the CMS blog build for your portfolio.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 10,
+        "icon": "fa-file-pen"
+      },
+      {
+        "id": "day_20_quest_3",
+        "label": "Portfolio Milestone Post",
+        "desc": "Share the finished CMS blog as a portfolio milestone post on LinkedIn/Instagram.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_20_quest_4",
+        "label": "Lessons Learned Thread",
+        "desc": "Post a recap thread on X covering what you learned building your first CMS site.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 1,
+        "energy": 19,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 21,
+    "quests": [
+      {
+        "id": "day_21_quest_1",
+        "label": "Product CMS Collection",
+        "desc": "Set up a CMS Collection for products with name, price, image, and category fields.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 7,
+        "icon": "fa-database"
+      },
+      {
+        "id": "day_21_quest_2",
+        "label": "Product Grid Page",
+        "desc": "Build a responsive product grid that pulls from the CMS Collection.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 10,
+        "icon": "fa-table-cells"
+      },
+      {
+        "id": "day_21_quest_3",
+        "label": "Product Card Component",
+        "desc": "Design a reusable product card Component complete with hover states.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-puzzle-piece"
+      },
+      {
+        "id": "day_21_quest_4",
+        "label": "Showcase Preview Tweet",
+        "desc": "Post a preview of your product showcase grid on X.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 22,
+    "quests": [
+      {
+        "id": "day_22_quest_1",
+        "label": "Dynamic Product Page",
+        "desc": "Build a dynamic product detail page template.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 8,
+        "icon": "fa-file-invoice"
+      },
+      {
+        "id": "day_22_quest_2",
+        "label": "Image Gallery Interaction",
+        "desc": "Add a swipeable, clickable image gallery to the product page.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 11,
+        "icon": "fa-images"
+      },
+      {
+        "id": "day_22_quest_3",
+        "label": "Product Page Walkthrough",
+        "desc": "Share a walkthrough of your dynamic product page on LinkedIn/Instagram.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 17,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_22_quest_4",
+        "label": "Gallery Interaction Clip",
+        "desc": "Post a short clip of the image gallery interaction on X.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 20,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 23,
+    "quests": [
+      {
+        "id": "day_23_quest_1",
+        "label": "Intro to Code Overrides",
+        "desc": "Write your first Framer code override to control a component's state.",
+        "xp": 10,
+        "gold": 4,
+        "gems": 0,
+        "energy": 8,
+        "icon": "fa-code"
+      },
+      {
+        "id": "day_23_quest_2",
+        "label": "Add-to-Cart Interaction",
+        "desc": "Build a custom code add-to-cart button with dynamic feedback.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 11,
+        "icon": "fa-cart-plus"
+      },
+      {
+        "id": "day_23_quest_3",
+        "label": "Custom Code Explainer",
+        "desc": "Share on LinkedIn/Instagram what custom code overrides are and why you are learning them.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 17,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_23_quest_4",
+        "label": "Code Snippet Share",
+        "desc": "Post a screenshot of your first override code on X.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 20,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 24,
+    "quests": [
+      {
+        "id": "day_24_quest_1",
+        "label": "Global Cart State",
+        "desc": "Set up shared state to track cart items across every page.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 9,
+        "icon": "fa-diagram-project"
+      },
+      {
+        "id": "day_24_quest_2",
+        "label": "Cart Counter UI",
+        "desc": "Build a live cart counter in the navbar that reflects the global state.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 12,
+        "icon": "fa-cart-shopping"
+      },
+      {
+        "id": "day_24_quest_3",
+        "label": "Cart Drawer Component",
+        "desc": "Build a slide-in cart drawer that displays the items a shopper has added.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 18,
+        "icon": "fa-table-list"
+      },
+      {
+        "id": "day_24_quest_4",
+        "label": "Cart Demo Tweet",
+        "desc": "Post a demo of your working shopping cart state on X.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 25,
+    "quests": [
+      {
+        "id": "day_25_quest_1",
+        "label": "Checkout Form",
+        "desc": "Build a multi-field checkout form with clear validation states.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 9,
+        "icon": "fa-credit-card"
+      },
+      {
+        "id": "day_25_quest_2",
+        "label": "Order Confirmation Page",
+        "desc": "Build a confirmation page and interaction for completed orders.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 12,
+        "icon": "fa-circle-check"
+      },
+      {
+        "id": "day_25_quest_3",
+        "label": "Full Flow Post",
+        "desc": "Post on LinkedIn/Instagram about the full flow you just built, from cart to checkout.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 18,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_25_quest_4",
+        "label": "Live Demo Link",
+        "desc": "Share the live checkout demo link on X.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 26,
+    "quests": [
+      {
+        "id": "day_26_quest_1",
+        "label": "Full E-Commerce QA",
+        "desc": "Test the entire cart-to-checkout flow across devices and breakpoints.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 10,
+        "icon": "fa-bug"
+      },
+      {
+        "id": "day_26_quest_2",
+        "label": "Performance Pass",
+        "desc": "Optimize image sizes and loading behavior across the product pages.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-gauge-high"
+      },
+      {
+        "id": "day_26_quest_3",
+        "label": "Showcase Launch Announcement",
+        "desc": "Announce on LinkedIn/Instagram that your e-commerce showcase project is complete and live.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_26_quest_4",
+        "label": "Project Recap Thread",
+        "desc": "Post a recap thread on X covering the custom code and state management lessons you learned.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 1,
+        "energy": 22,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 27,
+    "quests": [
+      {
+        "id": "day_27_quest_1",
+        "label": "SaaS Hero Concept",
+        "desc": "Design a SaaS landing page hero with a complex, layered animation sequence in mind.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 10,
+        "icon": "fa-rocket"
+      },
+      {
+        "id": "day_27_quest_2",
+        "label": "Animated Hero Build",
+        "desc": "Build the hero with staggered entrance animations and scroll-linked motion.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-wand-magic-sparkles"
+      },
+      {
+        "id": "day_27_quest_3",
+        "label": "Feature Grid Section",
+        "desc": "Build a features section using an icon-plus-text Grid layout.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-table-cells"
+      },
+      {
+        "id": "day_27_quest_4",
+        "label": "Hero Animation Preview",
+        "desc": "Post a preview clip of your SaaS hero animation on X.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 22,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 28,
+    "quests": [
+      {
+        "id": "day_28_quest_1",
+        "label": "Pricing Table Component",
+        "desc": "Build a three-tier pricing table Component.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 10,
+        "icon": "fa-money-bill"
+      },
+      {
+        "id": "day_28_quest_2",
+        "label": "Monthly/Annual Toggle",
+        "desc": "Add a code-driven toggle that switches pricing between monthly and annual.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-toggle-on"
+      },
+      {
+        "id": "day_28_quest_3",
+        "label": "Pricing Design Share",
+        "desc": "Share your pricing table design and toggle interaction on LinkedIn/Instagram.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_28_quest_4",
+        "label": "Toggle Demo GIF",
+        "desc": "Post a GIF of the pricing toggle in action on X.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 22,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 29,
+    "quests": [
+      {
+        "id": "day_29_quest_1",
+        "label": "Testimonial Carousel",
+        "desc": "Build a draggable testimonial carousel.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 11,
+        "icon": "fa-quote-left"
+      },
+      {
+        "id": "day_29_quest_2",
+        "label": "FAQ Accordion",
+        "desc": "Build an accordion-style FAQ section with a smooth expand and collapse motion.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-square-caret-down"
+      },
+      {
+        "id": "day_29_quest_3",
+        "label": "Carousel and Accordion Tips",
+        "desc": "Share a tip thread on LinkedIn/Instagram about building carousels and accordions in Framer.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 20,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_29_quest_4",
+        "label": "FAQ Demo Post",
+        "desc": "Post the finished FAQ accordion demo on X.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 23,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 30,
+    "quests": [
+      {
+        "id": "day_30_quest_1",
+        "label": "Fetch Basics",
+        "desc": "Write a code override that fetches data from a public API.",
+        "xp": 15,
+        "gold": 6,
+        "gems": 0,
+        "energy": 11,
+        "icon": "fa-cloud-arrow-down"
+      },
+      {
+        "id": "day_30_quest_2",
+        "label": "Live Stats Widget",
+        "desc": "Build a live-updating stats counter powered by the fetched API data.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-chart-line"
+      },
+      {
+        "id": "day_30_quest_3",
+        "label": "Error and Loading States",
+        "desc": "Add loading spinners and error handling to the API-powered widget.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 20,
+        "icon": "fa-spinner"
+      },
+      {
+        "id": "day_30_quest_4",
+        "label": "First Live Data Widget",
+        "desc": "Tweet about your first live-data widget built with a real API.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 23,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 31,
+    "quests": [
+      {
+        "id": "day_31_quest_1",
+        "label": "Dynamic Content Section",
+        "desc": "Pull and render a list of items from an external API, such as news or weather.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 12,
+        "icon": "fa-satellite-dish"
+      },
+      {
+        "id": "day_31_quest_2",
+        "label": "Refresh and Caching Logic",
+        "desc": "Add a manual refresh control and basic caching to avoid excess API calls.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 15,
+        "icon": "fa-rotate"
+      },
+      {
+        "id": "day_31_quest_3",
+        "label": "API Lessons Post",
+        "desc": "Share what you learned about connecting APIs inside Framer on LinkedIn/Instagram.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_31_quest_4",
+        "label": "Live Section Clip",
+        "desc": "Post a clip of your live API-powered section on X.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 24,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 32,
+    "quests": [
+      {
+        "id": "day_32_quest_1",
+        "label": "Full SaaS QA Pass",
+        "desc": "Test the entire SaaS page across breakpoints and interactions.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 12,
+        "icon": "fa-bug"
+      },
+      {
+        "id": "day_32_quest_2",
+        "label": "Performance Optimization",
+        "desc": "Audit and optimize load performance for the fully animated SaaS page.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 15,
+        "icon": "fa-gauge-high"
+      },
+      {
+        "id": "day_32_quest_3",
+        "label": "SaaS Launch Announcement",
+        "desc": "Announce on LinkedIn/Instagram that your SaaS landing page project is complete.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_32_quest_4",
+        "label": "Four Projects Recap",
+        "desc": "Post a four-projects-in-32-days progress recap thread on X.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 1,
+        "energy": 24,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 33,
+    "quests": [
+      {
+        "id": "day_33_quest_1",
+        "label": "Intro to 3D in Framer",
+        "desc": "Explore embedding a 3D scene into a Framer page.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-cube"
+      },
+      {
+        "id": "day_33_quest_2",
+        "label": "3D Hero Scene",
+        "desc": "Build a hero section featuring an embedded, interactive 3D object.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-cubes"
+      },
+      {
+        "id": "day_33_quest_3",
+        "label": "Camera and Lighting Basics",
+        "desc": "Adjust camera angle and lighting for the embedded 3D scene.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 22,
+        "icon": "fa-lightbulb"
+      },
+      {
+        "id": "day_33_quest_4",
+        "label": "First 3D Hero Video",
+        "desc": "Tweet a video of your first interactive 3D hero section.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 25,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 34,
+    "quests": [
+      {
+        "id": "day_34_quest_1",
+        "label": "Scroll-Triggered 3D Motion",
+        "desc": "Link the 3D object's rotation and position to the page's scroll position.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-arrows-spin"
+      },
+      {
+        "id": "day_34_quest_2",
+        "label": "Layered Depth Effect",
+        "desc": "Combine the 3D layer with 2D parallax layers to create a sense of depth.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-layer-group"
+      },
+      {
+        "id": "day_34_quest_3",
+        "label": "Scroll-Linked Demo",
+        "desc": "Share a demo video of the scroll-linked 3D effect on LinkedIn/Instagram.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 22,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_34_quest_4",
+        "label": "How Did They Do That",
+        "desc": "Post a short clip on X with a how-did-they-do-that caption.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 25,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 35,
+    "quests": [
+      {
+        "id": "day_35_quest_1",
+        "label": "Particle or Shader Effect",
+        "desc": "Add a lightweight particle or shader-based background effect using custom code.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 13,
+        "icon": "fa-sparkles"
+      },
+      {
+        "id": "day_35_quest_2",
+        "label": "Cross-Browser Check",
+        "desc": "Test the 3D section across three browsers and fix any inconsistencies you find.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-globe"
+      },
+      {
+        "id": "day_35_quest_3",
+        "label": "Effect Experiment Share",
+        "desc": "Share your particle effect experiment on LinkedIn/Instagram.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 22,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_35_quest_4",
+        "label": "Before and After Post",
+        "desc": "Post a before-and-after of the effect on X.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 25,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 36,
+    "quests": [
+      {
+        "id": "day_36_quest_1",
+        "label": "CMS-Driven 3D Gallery",
+        "desc": "Combine a CMS Collection with 3D cards to build an interactive project gallery.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-images"
+      },
+      {
+        "id": "day_36_quest_2",
+        "label": "Hover and Drag Interactions",
+        "desc": "Add hover-tilt or drag-to-rotate interactions to the gallery items.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 17,
+        "icon": "fa-hand"
+      },
+      {
+        "id": "day_36_quest_3",
+        "label": "Mobile Fallback",
+        "desc": "Build a lightweight 2D fallback for mobile devices where the 3D scene underperforms.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 23,
+        "icon": "fa-mobile"
+      },
+      {
+        "id": "day_36_quest_4",
+        "label": "Gallery Demo Tweet",
+        "desc": "Tweet a demo of the CMS-driven 3D gallery.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 26,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 37,
+    "quests": [
+      {
+        "id": "day_37_quest_1",
+        "label": "Asset Optimization",
+        "desc": "Compress and optimize 3D assets and textures for faster load times.",
+        "xp": 20,
+        "gold": 8,
+        "gems": 0,
+        "energy": 14,
+        "icon": "fa-file-zipper"
+      },
+      {
+        "id": "day_37_quest_2",
+        "label": "Lazy Loading 3D",
+        "desc": "Implement lazy loading so the 3D scene only loads once it scrolls into view.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 17,
+        "icon": "fa-hourglass-half"
+      },
+      {
+        "id": "day_37_quest_3",
+        "label": "Performance Numbers Post",
+        "desc": "Share before-and-after performance numbers for your 3D section on LinkedIn/Instagram.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 23,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_37_quest_4",
+        "label": "Quick Performance Tip",
+        "desc": "Post a quick performance tip thread on X.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 26,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 38,
+    "quests": [
+      {
+        "id": "day_38_quest_1",
+        "label": "Full 3D Site QA",
+        "desc": "Test the full 3D experience across devices and connection speeds.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 15,
+        "icon": "fa-bug"
+      },
+      {
+        "id": "day_38_quest_2",
+        "label": "Portfolio Write-Up",
+        "desc": "Document the 3D project as a portfolio case study.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 18,
+        "icon": "fa-file-pen"
+      },
+      {
+        "id": "day_38_quest_3",
+        "label": "3D Project Launch Post",
+        "desc": "Announce on LinkedIn/Instagram that your interactive 3D project is live.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 24,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_38_quest_4",
+        "label": "WebGL Lessons Thread",
+        "desc": "Share a recap thread on X about what WebGL and 3D taught you.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 1,
+        "energy": 27,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 39,
+    "quests": [
+      {
+        "id": "day_39_quest_1",
+        "label": "Dashboard Layout Plan",
+        "desc": "Wireframe an interactive dashboard with a sidebar nav, header, and content grid.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 15,
+        "icon": "fa-table-columns"
+      },
+      {
+        "id": "day_39_quest_2",
+        "label": "Sidebar Navigation Build",
+        "desc": "Build a collapsible sidebar navigation Component.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 18,
+        "icon": "fa-bars-staggered"
+      },
+      {
+        "id": "day_39_quest_3",
+        "label": "Dashboard Grid System",
+        "desc": "Build the responsive Grid system that will hold the dashboard widgets.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 24,
+        "icon": "fa-border-all"
+      },
+      {
+        "id": "day_39_quest_4",
+        "label": "Layout Wireframe Tweet",
+        "desc": "Tweet your dashboard layout wireframe.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 27,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 40,
+    "quests": [
+      {
+        "id": "day_40_quest_1",
+        "label": "Custom Chart Component",
+        "desc": "Build a code-driven bar or line chart Component.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-chart-column"
+      },
+      {
+        "id": "day_40_quest_2",
+        "label": "KPI Cards",
+        "desc": "Build animated KPI cards featuring count-up number animations.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-gauge"
+      },
+      {
+        "id": "day_40_quest_3",
+        "label": "First Data-Viz Share",
+        "desc": "Share your first data-visualization component built in Framer on LinkedIn/Instagram.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 25,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_40_quest_4",
+        "label": "KPI Card Demo",
+        "desc": "Post a demo GIF of the animated KPI cards on X.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 28,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 41,
+    "quests": [
+      {
+        "id": "day_41_quest_1",
+        "label": "Live Data Binding",
+        "desc": "Connect the dashboard widgets to a real-time or polling API.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-satellite-dish"
+      },
+      {
+        "id": "day_41_quest_2",
+        "label": "Auto-Refresh Logic",
+        "desc": "Add interval-based auto-refresh with subtle update animations.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-arrows-rotate"
+      },
+      {
+        "id": "day_41_quest_3",
+        "label": "Real-Time Dashboard Video",
+        "desc": "Share a video of your dashboard updating in real time on LinkedIn/Instagram.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 25,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_41_quest_4",
+        "label": "Real Dashboard Update",
+        "desc": "Post a building-a-real-dashboard-in-Framer update on X.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 28,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 42,
+    "quests": [
+      {
+        "id": "day_42_quest_1",
+        "label": "Global Filter State",
+        "desc": "Build shared state so filters affect multiple dashboard widgets at once.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 16,
+        "icon": "fa-filter"
+      },
+      {
+        "id": "day_42_quest_2",
+        "label": "Date Range Picker",
+        "desc": "Build a custom date-range picker Component for the dashboard.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-calendar-days"
+      },
+      {
+        "id": "day_42_quest_3",
+        "label": "Widget Drag Reorder",
+        "desc": "Add drag-to-reorder functionality for the dashboard widgets.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 25,
+        "icon": "fa-arrows-up-down"
+      },
+      {
+        "id": "day_42_quest_4",
+        "label": "Filtering Demo Tweet",
+        "desc": "Tweet a demo of the interactive filtering system.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 28,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 43,
+    "quests": [
+      {
+        "id": "day_43_quest_1",
+        "label": "Login Screen UI",
+        "desc": "Design and build a polished login screen.",
+        "xp": 25,
+        "gold": 10,
+        "gems": 0,
+        "energy": 17,
+        "icon": "fa-right-to-bracket"
+      },
+      {
+        "id": "day_43_quest_2",
+        "label": "Mock Auth State",
+        "desc": "Wire up a mock authentication state that gates access to the dashboard.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 20,
+        "icon": "fa-shield-halved"
+      },
+      {
+        "id": "day_43_quest_3",
+        "label": "Login Flow Share",
+        "desc": "Share your login flow design on LinkedIn/Instagram.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 26,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_43_quest_4",
+        "label": "Login Transition Clip",
+        "desc": "Post a clip of the login-to-dashboard transition on X.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 29,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 44,
+    "quests": [
+      {
+        "id": "day_44_quest_1",
+        "label": "Dark Mode Toggle",
+        "desc": "Add a full dark and light mode toggle across the entire dashboard.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 17,
+        "icon": "fa-circle-half-stroke"
+      },
+      {
+        "id": "day_44_quest_2",
+        "label": "Full Responsive Pass",
+        "desc": "Make every dashboard widget fully responsive down to mobile.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 20,
+        "icon": "fa-mobile-screen"
+      },
+      {
+        "id": "day_44_quest_3",
+        "label": "Dark Mode Demo Post",
+        "desc": "Share your dark mode toggle demo on LinkedIn/Instagram.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 26,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_44_quest_4",
+        "label": "Almost Done Teaser",
+        "desc": "Post a dashboard-nearly-done teaser on X.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 29,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 45,
+    "quests": [
+      {
+        "id": "day_45_quest_1",
+        "label": "Full Dashboard QA",
+        "desc": "Test every interaction, filter, and breakpoint on the dashboard end to end.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 18,
+        "icon": "fa-bug"
+      },
+      {
+        "id": "day_45_quest_2",
+        "label": "Portfolio Update",
+        "desc": "Update your portfolio site to showcase all six Phase 2 projects.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-briefcase"
+      },
+      {
+        "id": "day_45_quest_3",
+        "label": "Phase 2 Reflection Doc",
+        "desc": "Write a personal retrospective on your growth across Phase 2, covering skills gained and biggest challenges.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 27,
+        "icon": "fa-book"
+      },
+      {
+        "id": "day_45_quest_4",
+        "label": "Six Projects Recap Thread",
+        "desc": "Post a six-projects-in-33-days recap thread on X celebrating the end of Phase 2.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 1,
+        "energy": 30,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 46,
+    "quests": [
+      {
+        "id": "day_46_quest_1",
+        "label": "Template Niche Research",
+        "desc": "Research the Framer Marketplace to find a profitable niche, then choose SaaS Dashboard as Template 1.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 18,
+        "icon": "fa-magnifying-glass"
+      },
+      {
+        "id": "day_46_quest_2",
+        "label": "Wireframe the Template",
+        "desc": "Wireframe every page and section the SaaS Dashboard template will include.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-pen-ruler"
+      },
+      {
+        "id": "day_46_quest_3",
+        "label": "Design System Setup",
+        "desc": "Build the color, type, and component system that will power the template.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 27,
+        "icon": "fa-swatchbook"
+      },
+      {
+        "id": "day_46_quest_4",
+        "label": "Template 1 Concept Post",
+        "desc": "Share your first commercial template concept and niche research on LinkedIn/Instagram.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-share-nodes"
+      }
+    ]
+  },
+  {
+    "day": 47,
+    "quests": [
+      {
+        "id": "day_47_quest_1",
+        "label": "Build Core Sections",
+        "desc": "Build every core section and page of the SaaS Dashboard template.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 18,
+        "icon": "fa-hammer"
+      },
+      {
+        "id": "day_47_quest_2",
+        "label": "CMS and Responsive Setup",
+        "desc": "Add CMS collections where relevant and finalize responsive breakpoints.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-mobile-screen"
+      },
+      {
+        "id": "day_47_quest_3",
+        "label": "Package and Document",
+        "desc": "Write setup documentation and package the template for submission.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 27,
+        "icon": "fa-file-zipper"
+      },
+      {
+        "id": "day_47_quest_4",
+        "label": "Template 1 Live",
+        "desc": "Announce on X that Template 1 has been submitted to the Framer Marketplace.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 1,
+        "energy": 30,
+        "icon": "fa-store"
+      }
+    ]
+  },
+  {
+    "day": 48,
+    "quests": [
+      {
+        "id": "day_48_quest_1",
+        "label": "Template 2 Concept",
+        "desc": "Define the Creator Portfolio template concept and its target audience.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-user-pen"
+      },
+      {
+        "id": "day_48_quest_2",
+        "label": "Wireframe and Layout Plan",
+        "desc": "Wireframe the portfolio template's key pages: home, work, about, and contact.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 22,
+        "icon": "fa-pen-ruler"
+      },
+      {
+        "id": "day_48_quest_3",
+        "label": "Component System",
+        "desc": "Build the reusable component library for the portfolio template.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 28,
+        "icon": "fa-puzzle-piece"
+      },
+      {
+        "id": "day_48_quest_4",
+        "label": "Template 2 Concept Post",
+        "desc": "Share your Template 2 concept and design direction on LinkedIn/Instagram.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-share-nodes"
+      }
+    ]
+  },
+  {
+    "day": 49,
+    "quests": [
+      {
+        "id": "day_49_quest_1",
+        "label": "Build the Portfolio Template",
+        "desc": "Build every page of the Creator Portfolio template.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 19,
+        "icon": "fa-hammer"
+      },
+      {
+        "id": "day_49_quest_2",
+        "label": "SEO and Performance Pass",
+        "desc": "Optimize SEO metadata and page performance across the template.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 22,
+        "icon": "fa-gauge-high"
+      },
+      {
+        "id": "day_49_quest_3",
+        "label": "Package and Document",
+        "desc": "Finalize documentation and package Template 2 for the marketplace.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 28,
+        "icon": "fa-file-zipper"
+      },
+      {
+        "id": "day_49_quest_4",
+        "label": "Template 2 Live",
+        "desc": "Announce on X that Template 2 is live on the Framer Marketplace.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 1,
+        "energy": 30,
+        "icon": "fa-store"
+      }
+    ]
+  },
+  {
+    "day": 50,
+    "quests": [
+      {
+        "id": "day_50_quest_1",
+        "label": "Template 3 Concept",
+        "desc": "Define the E-Commerce Storefront template concept, leveraging your Project 3 skills.",
+        "xp": 30,
+        "gold": 12,
+        "gems": 0,
+        "energy": 20,
+        "icon": "fa-cart-shopping"
+      },
+      {
+        "id": "day_50_quest_2",
+        "label": "Wireframe and Layout Plan",
+        "desc": "Wireframe the product grid, product detail, and checkout pages.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 23,
+        "icon": "fa-pen-ruler"
+      },
+      {
+        "id": "day_50_quest_3",
+        "label": "Component System",
+        "desc": "Build reusable product card, cart, and checkout components.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 29,
+        "icon": "fa-puzzle-piece"
+      },
+      {
+        "id": "day_50_quest_4",
+        "label": "Template 3 Concept Preview",
+        "desc": "Share a preview of your Template 3 concept on LinkedIn/Instagram.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-share-nodes"
+      }
+    ]
+  },
+  {
+    "day": 51,
+    "quests": [
+      {
+        "id": "day_51_quest_1",
+        "label": "Build the Storefront Template",
+        "desc": "Build every page of the E-Commerce Storefront template.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 20,
+        "icon": "fa-hammer"
+      },
+      {
+        "id": "day_51_quest_2",
+        "label": "CMS and Filtering Setup",
+        "desc": "Wire up CMS-driven products with filtering and search.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 23,
+        "icon": "fa-filter"
+      },
+      {
+        "id": "day_51_quest_3",
+        "label": "Package and Document",
+        "desc": "Document and package Template 3 for submission.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 29,
+        "icon": "fa-file-zipper"
+      },
+      {
+        "id": "day_51_quest_4",
+        "label": "Template 3 Live",
+        "desc": "Announce on X that Template 3 is live on the marketplace.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 1,
+        "energy": 30,
+        "icon": "fa-store"
+      }
+    ]
+  },
+  {
+    "day": 52,
+    "quests": [
+      {
+        "id": "day_52_quest_1",
+        "label": "Template 4 Concept",
+        "desc": "Define the Agency/Studio template concept and its unique selling point.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-building"
+      },
+      {
+        "id": "day_52_quest_2",
+        "label": "Wireframe and Layout Plan",
+        "desc": "Wireframe the home, case-study, team, and contact pages.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 24,
+        "icon": "fa-pen-ruler"
+      },
+      {
+        "id": "day_52_quest_3",
+        "label": "Component System",
+        "desc": "Build case-study card, team grid, and call-to-action components.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-puzzle-piece"
+      },
+      {
+        "id": "day_52_quest_4",
+        "label": "Template 4 Moodboard Post",
+        "desc": "Share your Template 4 concept and moodboard on LinkedIn/Instagram.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-share-nodes"
+      }
+    ]
+  },
+  {
+    "day": 53,
+    "quests": [
+      {
+        "id": "day_53_quest_1",
+        "label": "Build the Agency Template",
+        "desc": "Build every page of the Agency/Studio template.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-hammer"
+      },
+      {
+        "id": "day_53_quest_2",
+        "label": "Signature Motion Pass",
+        "desc": "Add signature animations and motion design to differentiate the template.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 24,
+        "icon": "fa-wand-magic-sparkles"
+      },
+      {
+        "id": "day_53_quest_3",
+        "label": "Package and Document",
+        "desc": "Document and package Template 4 for submission.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-file-zipper"
+      },
+      {
+        "id": "day_53_quest_4",
+        "label": "Template 4 Live",
+        "desc": "Announce on X that Template 4 is live on the marketplace.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 1,
+        "energy": 30,
+        "icon": "fa-store"
+      }
+    ]
+  },
+  {
+    "day": 54,
+    "quests": [
+      {
+        "id": "day_54_quest_1",
+        "label": "Template 5 Concept",
+        "desc": "Define the Newsletter/Community template concept.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 21,
+        "icon": "fa-users"
+      },
+      {
+        "id": "day_54_quest_2",
+        "label": "Wireframe and Layout Plan",
+        "desc": "Wireframe the landing, archive, and signup pages.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 24,
+        "icon": "fa-pen-ruler"
+      },
+      {
+        "id": "day_54_quest_3",
+        "label": "Component System",
+        "desc": "Build signup form, archive card, and testimonial components.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-puzzle-piece"
+      },
+      {
+        "id": "day_54_quest_4",
+        "label": "Template 5 Preview Post",
+        "desc": "Share a preview of your Template 5 concept on LinkedIn/Instagram.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-share-nodes"
+      }
+    ]
+  },
+  {
+    "day": 55,
+    "quests": [
+      {
+        "id": "day_55_quest_1",
+        "label": "Build the Newsletter Template",
+        "desc": "Build every page of the Newsletter/Community template.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 22,
+        "icon": "fa-hammer"
+      },
+      {
+        "id": "day_55_quest_2",
+        "label": "Integration Setup",
+        "desc": "Wire up form integrations and a CMS-driven archive listing.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 25,
+        "icon": "fa-plug"
+      },
+      {
+        "id": "day_55_quest_3",
+        "label": "Package and Document",
+        "desc": "Document and package Template 5 for submission.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-file-zipper"
+      },
+      {
+        "id": "day_55_quest_4",
+        "label": "Template 5 Live",
+        "desc": "Announce on X that Template 5 is live on the marketplace.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 1,
+        "energy": 30,
+        "icon": "fa-store"
+      }
+    ]
+  },
+  {
+    "day": 56,
+    "quests": [
+      {
+        "id": "day_56_quest_1",
+        "label": "Template 6 Concept",
+        "desc": "Define the AI Startup template concept, the final template of the challenge.",
+        "xp": 35,
+        "gold": 14,
+        "gems": 0,
+        "energy": 22,
+        "icon": "fa-microchip"
+      },
+      {
+        "id": "day_56_quest_2",
+        "label": "Wireframe and Layout Plan",
+        "desc": "Wireframe the hero, features, pricing, and demo-request pages.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 25,
+        "icon": "fa-pen-ruler"
+      },
+      {
+        "id": "day_56_quest_3",
+        "label": "Component System",
+        "desc": "Build feature grid, pricing, and demo-request components.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-puzzle-piece"
+      },
+      {
+        "id": "day_56_quest_4",
+        "label": "Final Template Concept Post",
+        "desc": "Share your final template concept and the story of your journey so far on LinkedIn/Instagram.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-share-nodes"
+      }
+    ]
+  },
+  {
+    "day": 57,
+    "quests": [
+      {
+        "id": "day_57_quest_1",
+        "label": "Build the AI Startup Template",
+        "desc": "Build every page of the AI Startup template.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 23,
+        "icon": "fa-hammer"
+      },
+      {
+        "id": "day_57_quest_2",
+        "label": "Final Polish Pass",
+        "desc": "Add final animations, performance tuning, and a full responsive QA pass.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 26,
+        "icon": "fa-gauge-high"
+      },
+      {
+        "id": "day_57_quest_3",
+        "label": "Package and Document",
+        "desc": "Document and package Template 6, your sixth and final template.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-file-zipper"
+      },
+      {
+        "id": "day_57_quest_4",
+        "label": "All Six Templates Live",
+        "desc": "Announce on X that Template 6 is live and all six templates are now complete.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 1,
+        "energy": 30,
+        "icon": "fa-store"
+      }
+    ]
+  },
+  {
+    "day": 58,
+    "quests": [
+      {
+        "id": "day_58_quest_1",
+        "label": "Accessibility Audit",
+        "desc": "Run an accessibility pass covering contrast, alt text, and focus states across all six templates.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 23,
+        "icon": "fa-universal-access"
+      },
+      {
+        "id": "day_58_quest_2",
+        "label": "Performance Audit",
+        "desc": "Benchmark load speed and performance score across all six templates.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 26,
+        "icon": "fa-gauge-high"
+      },
+      {
+        "id": "day_58_quest_3",
+        "label": "Cross-Browser QA",
+        "desc": "Test all six templates across the major browsers and devices.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-desktop"
+      },
+      {
+        "id": "day_58_quest_4",
+        "label": "Marketplace Listing Polish",
+        "desc": "Refine thumbnails, preview images, and descriptions for all six marketplace listings.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-image"
+      }
+    ]
+  },
+  {
+    "day": 59,
+    "quests": [
+      {
+        "id": "day_59_quest_1",
+        "label": "Bundle Showcase Page",
+        "desc": "Build a single showcase page presenting all six templates as a bundle.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 24,
+        "icon": "fa-layer-group"
+      },
+      {
+        "id": "day_59_quest_2",
+        "label": "Promo Assets",
+        "desc": "Create promotional graphics and GIFs for each of the six templates.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 27,
+        "icon": "fa-photo-film"
+      },
+      {
+        "id": "day_59_quest_3",
+        "label": "Launch Post",
+        "desc": "Publish a LinkedIn/Instagram launch post showcasing your full six-template collection.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 1,
+        "energy": 30,
+        "icon": "fa-share-nodes"
+      },
+      {
+        "id": "day_59_quest_4",
+        "label": "Launch Thread",
+        "desc": "Run an X launch thread unveiling all six templates with links.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-hashtag"
+      }
+    ]
+  },
+  {
+    "day": 60,
+    "quests": [
+      {
+        "id": "day_60_quest_1",
+        "label": "Portfolio Final Review",
+        "desc": "Do a final review and polish pass across your entire portfolio of six projects and six templates.",
+        "xp": 40,
+        "gold": 16,
+        "gems": 0,
+        "energy": 24,
+        "icon": "fa-briefcase"
+      },
+      {
+        "id": "day_60_quest_2",
+        "label": "Pricing and Business Setup",
+        "desc": "Define your freelance and template pricing strategy and set up a simple storefront profile.",
+        "xp": 45,
+        "gold": 18,
+        "gems": 0,
+        "energy": 27,
+        "icon": "fa-sack-dollar"
+      },
+      {
+        "id": "day_60_quest_3",
+        "label": "60-Day Retrospective",
+        "desc": "Write a full retrospective on your transformation from beginner to professional over these 60 days.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 0,
+        "energy": 30,
+        "icon": "fa-book-open"
+      },
+      {
+        "id": "day_60_quest_4",
+        "label": "Graduation Post",
+        "desc": "Publish your graduation post, sharing your full journey, portfolio, and template collection with the world.",
+        "xp": 50,
+        "gold": 20,
+        "gems": 1,
+        "energy": 30,
+        "icon": "fa-graduation-cap"
+      }
+    ]
+  }
+]
