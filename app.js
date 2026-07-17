@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
 	"use strict";
 
 	/* ============================================================
@@ -1042,7 +1042,10 @@
 		}
 		document.querySelectorAll("[data-manual-quest]").forEach((inp) => {
 			inp.addEventListener("change", function () {
-				setManualQuestState(this.getAttribute("data-manual-quest"), this.checked);
+				setManualQuestState(
+					this.getAttribute("data-manual-quest"),
+					this.checked,
+				);
 			});
 		});
 		const addManualQuestBtn = document.getElementById("addManualQuestBtn");
