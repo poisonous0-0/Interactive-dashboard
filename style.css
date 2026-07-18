@@ -836,6 +836,13 @@ input[type="text"] {
 	background: rgba(63, 197, 255, 0.08);
 	border-color: rgba(63, 197, 255, 0.28);
 }
+.quest-row.manual.locked {
+	opacity: 0.55;
+}
+.quest-row.manual.locked .quest-check,
+.quest-row.manual.locked .quest-check input {
+	cursor: not-allowed;
+}
 .manual-quest-actions {
 	margin-top: 10px;
 	display: flex;
