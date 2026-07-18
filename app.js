@@ -741,6 +741,13 @@
 	}
 
 	function addManualQuest() {
+		if (!questDefsForToday.every((questDef) => state.today.quests[questDef.id])) {
+			showToast(
+				"Complete all mandatory quests to access optional quests.",
+				"achievement",
+			);
+			return;
+		}
 		const text = prompt("Add optional manual quest:");
 		if (text == null) return;
 		const label = text.trim();
@@ -758,6 +765,9 @@
 	}
 
 	function setManualQuestState(id, checked) {
+		if (!questDefsForToday.every((questDef) => state.today.quests[questDef.id])) {
+			return;
+		}
 		const item = state.today.manualQuests.find((q) => q.id === id);
 		if (!item || item.done === checked) return;
 		item.done = checked;
@@ -960,6 +970,7 @@
 				const done = !!item.done;
 				return (
 					'<div class="quest-row manual' +
+					(!allDone ? " locked" : "") +
 					(done ? " done" : "") +
 					'">' +
 					'<label class="quest-check">' +
@@ -967,6 +978,7 @@
 					item.id +
 					'" ' +
 					(done ? "checked" : "") +
+					(!allDone ? " disabled" : "") +
 					">" +
 					'<i class="fa-solid fa-check"></i>' +
 					"</label>" +
